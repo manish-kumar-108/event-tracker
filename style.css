@@ -1,0 +1,83 @@
+body {
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 20px;
+    font-family: Arial;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    display: grid; 
+    display: block;
+}
+
+.form-box {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid gray; 
+    border-radius: 8px;
+}
+
+.input-group input, 
+.input-group select {
+    width: 95%; 
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white; 
+}
+
+#eventsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 5px solid gray;
+    border-radius: 5px;
+}
+
+.urgent {
+    border: 3px solid red;
+}
+
+.overdue {
+    opacity: 0.6;
+    background-color: pink;
+    border-left: 5px solid red;
+}
+
+.bg-hackathon { background-color: green; color: white; }
+.bg-deadline { background-color: red; color: white; }
+.bg-exam { background-color: blue; color: white; }
+.bg-event { background-color: yellow; color: black; }
+
+.badge {
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.delete-btn {
+    background-color: red;
+    color: white;
+    padding: 5px;
+    margin-top: 15px;
+    display: block;
+}
