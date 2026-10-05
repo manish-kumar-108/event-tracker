@@ -2,13 +2,18 @@
 <html>
 <head>
     <title>Event Tracker</title>
+    <!-- FIX: This must match your actual CSS file name exactly -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- weird jelly background -->
+    <div class="jelly-bg"></div>
+
     <br>
     <div class="container">
         <center><h1>My Event Tracker</h1></center>
         <p style="text-align: center;">Everything I need to show up for.</p>
+        
         <div class="form-box">
             <form id="addEventForm">
                 <div class="input-group">
@@ -22,13 +27,22 @@
                 </div>
                 <br>
                 <div class="input-group">
+                    <label>Time (optional):</label><br>
+                    <input type="time" id="eventTime">
+                </div>
+                <br>
+                <div class="input-group">
                     <label>Event Type:</label><br>
-                    <select id="eventType" required>
+                    <!-- beginner way to show/hide a box -->
+                    <select id="eventType" required onchange="checkIfOther()">
                         <option value="hackathon">Hackathon</option>
                         <option value="deadline">Deadline</option>
                         <option value="exam">Exam</option>
                         <option value="event">Event</option>
+                        <option value="other">Other...</option>
                     </select>
+                    
+                    <input type="text" id="otherBox" placeholder="What is it?" style="display: none; margin-top: 10px; width: 95%; padding: 10px;">
                 </div>
                 <br>
                 <button type="submit" class="submit-btn">Add Event</button>
@@ -38,9 +52,11 @@
         <div></div>
         <h2>Upcoming:</h2>
         <div id="eventsContainer">
-                 </div>
+            <!-- cards go here -->
+        </div>
     </div>
 
+    <!-- FIX: This must match your actual JS file name exactly -->
     <script src="script.js"></script>
 </body>
 </html>

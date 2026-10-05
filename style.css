@@ -1,8 +1,26 @@
 body {
-    background-color: whitesmoke;
     margin: 0;
     padding: 20px;
     font-family: Arial;
+}
+
+/* backgroud animaton from a tutorial */
+.jelly-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: lightblue;
+    z-index: -1;
+    z-index: -99; /* put it super far back */
+    animation: squish 8s infinite alternate;
+}
+
+@keyframes squish {
+    0% { border-radius: 30% 70% 70% 30%; background-color: lightblue; }
+    50% { border-radius: 70% 30% 30% 70%; background-color: lightpink; }
+    100% { border-radius: 40% 60% 80% 20%; background-color: plum; }
 }
 
 h1 {
@@ -22,6 +40,7 @@ h1 {
     padding: 20px;
     border: 1px solid gray; 
     border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
 }
 
 .input-group input, 
@@ -52,6 +71,7 @@ h1 {
     margin-bottom: 15px;
     border-left: 5px solid gray;
     border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
 }
 
 .urgent {
@@ -68,6 +88,7 @@ h1 {
 .bg-deadline { background-color: red; color: white; }
 .bg-exam { background-color: blue; color: white; }
 .bg-event { background-color: yellow; color: black; }
+.bg-other { background-color: purple; color: white; }
 
 .badge {
     padding: 5px;
