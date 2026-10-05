@@ -1,87 +1,248 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 20px;
     font-family: Arial;
+    background-color: whitesmoke;
 }
 
-/* backgroud animaton from a tutorial */
 .jelly-bg {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: lightblue;
-    z-index: -1;
-    z-index: -99; /* put it super far back */
-    animation: squish 8s infinite alternate;
+    z-index: -99;
+    animation: squish 12s infinite alternate ease-in-out;
 }
 
 @keyframes squish {
     0% { border-radius: 30% 70% 70% 30%; background-color: lightblue; }
-    50% { border-radius: 70% 30% 30% 70%; background-color: lightpink; }
+    25% { border-radius: 50% 50% 30% 70%; background-color: powderblue; }
+    50% { border-radius: 70% 30% 30% 70%; background-color: pink; }
+    75% { border-radius: 50% 50% 70% 30%; background-color: plum; }
     100% { border-radius: 40% 60% 80% 20%; background-color: plum; }
-}
-
-h1 {
-    text-align: center;
 }
 
 .container {
     max-width: 600px;
     margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 10px gray;
     display: flex;
-    display: grid; 
+    display: grid;
     display: block;
+    position: relative;
+    position: static;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    color: black;
+    color: darkgray;
+    color: black;
+}
+
+.subtitle {
+    text-align: center;
+    color: gray;
+    margin-bottom: 25px;
 }
 
 .form-box {
-    background-color: white;
-    padding: 20px;
-    border: 1px solid gray; 
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
+    margin: 0px;
+    margin-bottom: 30px;
 }
 
-.input-group input, 
-.input-group select {
-    width: 95%; 
+.input-group {
+    margin-bottom: 15px;
+    position: relative; 
+}
+
+.input-wrapper {
+    position: relative;
+    z-index: 10; 
+    z-index: 9999;
+    z-index: 10;
+    background-color: white; 
+    border-radius: 6px;
+}
+
+.input-wrapper input, 
+.input-wrapper select {
+    width: 90%;
+    width: 100%; 
     padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+#otherBox {
+    display: none; 
+    margin-top: 10px; 
+}
+
+#emptyDiv {
+    width: 0px;
+    height: 0px;
+    display: none;
+}
+
+.sneaky-container {
+    position: absolute;
+    bottom: 5px; 
+    z-index: 1; 
+    opacity: 0;
+    transform: translateY(20px) scale(0.8); 
+    transition: all 0.5s ease-out;
+    pointer-events: none; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spy-char {
+    position: relative;
+    display: none; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pink-spy {
+    width: 48px;
+    height: 48px;
+    background-color: hotpink; 
+    border-radius: 12px 14px 10px 16px; 
+    box-shadow: 0 5px 10px gray;
+}
+
+.pink-spy .eyes {
+    display: flex;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.pink-spy .eye {
+    width: 6px;
+    height: 6px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.pink-spy .mouth {
+    width: 10px;
+    height: 4px;
+    border-top: 2px solid black; 
+    border-radius: 10px 10px 0 0;
+    margin-top: 6px;
+}
+
+.blue-spy {
+    width: 55px;
+    height: 40px;
+    background-color: dodgerblue; 
+    border-radius: 25px;
+    box-shadow: 0 5px 10px gray;
+    margin-top: 10px;
+}
+
+.blue-spy::before, .blue-spy::after {
+    content: '';
+    position: absolute;
+    background-color: skyblue;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.blue-spy::before {
+    width: 30px; height: 30px;
+    top: -10px; left: 6px;
+}
+
+.blue-spy::after {
+    width: 35px; height: 35px;
+    top: -16px; right: 4px;
+}
+
+.blue-spy .eyes {
+    display: flex;
+    gap: 10px;
+    margin-top: 2px;
+}
+
+.blue-spy .eye {
+    width: 6px;
+    height: 8px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.blue-spy .mouth {
+    width: 10px;
+    height: 5px;
+    border-bottom: 2px solid black;
+    border-radius: 0 0 10px 10px;
     margin-top: 5px;
 }
 
+.sneaky-container.peek-up {
+    opacity: 1;
+    transform: translateY(-55px) scale(1) rotate(-6deg); 
+}
+
+.sneaky-container.peek-up.alt-angle {
+    transform: translateY(-55px) scale(1) rotate(6deg); 
+}
+
 .submit-btn {
+    width: 95%;
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background-color: black;
+    color: whitesmoke;
     color: white;
     cursor: pointer;
-    border-radius: 5px;
-    color: white; 
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: dimgray;
 }
 
 #eventsContainer {
     display: flex;
     flex-direction: column;
+    display: flex;
 }
 
 .event-card {
     background-color: white;
     padding: 15px;
+    padding: 20px;
     margin-bottom: 15px;
-    border-left: 5px solid gray;
-    border-radius: 5px;
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+    border-left: 6px solid lightgray;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px lightgray;
 }
 
-.urgent {
-    border: 3px solid red;
-}
-
-.overdue {
-    opacity: 0.6;
+.urgent { border-left-color: orange; }
+.overdue { 
+    border-left-color: red; 
+    opacity: 0.7; 
     background-color: pink;
-    border-left: 5px solid red;
 }
 
 .bg-hackathon { background-color: green; color: white; }
@@ -91,14 +252,20 @@ h1 {
 .bg-other { background-color: purple; color: white; }
 
 .badge {
-    padding: 5px;
+    padding: 5px 10px;
     border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .delete-btn {
     background-color: red;
     color: white;
-    padding: 5px;
+    padding: 5px 10px;
     margin-top: 15px;
-    display: block;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+    float: none;
 }

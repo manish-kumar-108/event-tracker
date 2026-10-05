@@ -2,48 +2,73 @@
 <html>
 <head>
     <title>Event Tracker</title>
-    <!-- FIX: This must match your actual CSS file name exactly -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- weird jelly background -->
     <div class="jelly-bg"></div>
 
-    <br>
-    <div class="container">
-        <center><h1>My Event Tracker</h1></center>
-        <p style="text-align: center;">Everything I need to show up for.</p>
+    <br><br>
+    <div class="container container-box">
+        <center><center><h1>My Event Tracker</h1></center></center>
+        <p class="subtitle" style="text-align: center; color: gray;">Everything I need to show up for.</p>
         
         <div class="form-box">
             <form id="addEventForm">
-                <div class="input-group">
-                    <label>Event Name:</label><br>
-                    <input type="text" id="eventName" required placeholder="Web Dev Hackathon">
+                <div class="input-group" id="group1">
+                    <label>Event Name:</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="eventName" required placeholder="Web Dev Hackathon">
+                    </div>
                 </div>
-                <br>
-                <div class="input-group">
-                    <label>Date:</label><br>
-                    <input type="date" id="eventDate" required>
+                
+                <div class="input-group" id="group2">
+                    <label>Date:</label>
+                    <div class="input-wrapper">
+                        <input type="date" id="eventDate" required>
+                    </div>
                 </div>
-                <br>
-                <div class="input-group">
-                    <label>Time (optional):</label><br>
-                    <input type="time" id="eventTime">
+                
+                <div class="input-group" id="group3">
+                    <label>Time (optional):</label>
+                    <div class="input-wrapper">
+                        <input type="time" id="eventTime">
+                    </div>
                 </div>
-                <br>
-                <div class="input-group">
-                    <label>Event Type:</label><br>
-                    <!-- beginner way to show/hide a box -->
-                    <select id="eventType" required onchange="checkIfOther()">
-                        <option value="hackathon">Hackathon</option>
-                        <option value="deadline">Deadline</option>
-                        <option value="exam">Exam</option>
-                        <option value="event">Event</option>
-                        <option value="other">Other...</option>
-                    </select>
-                    
-                    <input type="text" id="otherBox" placeholder="What is it?" style="display: none; margin-top: 10px; width: 95%; padding: 10px;">
+                
+                <div class="input-group" id="group4">
+                    <label>Event Type:</label>
+                    <div class="input-wrapper">
+                        <select id="eventType" required onchange="checkIfOther()">
+                            <option value="hackathon">Hackathon</option>
+                            <option value="deadline">Deadline</option>
+                            <option value="exam">Exam</option>
+                            <option value="event">Event</option>
+                            <option value="other">Other...</option>
+                        </select>
+                        <input type="text" id="otherBox" placeholder="What is it?">
+                    </div>
                 </div>
+                
+                <div id="emptyDiv"></div>
+                
+                <div id="sneakyCharacter" class="sneaky-container">
+                    <div id="pinkSpy" class="spy-char pink-spy">
+                        <div class="eyes">
+                            <div class="eye"></div>
+                            <div class="eye"></div>
+                        </div>
+                        <div class="mouth sad"></div>
+                    </div>
+
+                    <div id="blueSpy" class="spy-char blue-spy">
+                        <div class="eyes">
+                            <div class="eye"></div>
+                            <div class="eye"></div>
+                        </div>
+                        <div class="mouth smile"></div>
+                    </div>
+                </div>
+
                 <br>
                 <button type="submit" class="submit-btn">Add Event</button>
             </form>
@@ -52,11 +77,9 @@
         <div></div>
         <h2>Upcoming:</h2>
         <div id="eventsContainer">
-            <!-- cards go here -->
         </div>
     </div>
 
-    <!-- FIX: This must match your actual JS file name exactly -->
     <script src="script.js"></script>
 </body>
 </html>
